@@ -1,0 +1,152 @@
+# built on replit vocab multichice game for tutoring student leanring English
+## makes A, B, C, D defintions from a nested dict list.
+
+
+
+
+#from replit import clear
+from vocab import vocab_list
+import random
+
+
+
+account_a = random.choice(vocab_list)
+
+index_a = vocab_list.index(account_a)
+
+account_b = random.choice(vocab_list)
+
+index_b = vocab_list.index(account_b)
+
+account_c = random.choice(vocab_list)
+
+index_c = vocab_list.index(account_c)
+
+account_d = random.choice(vocab_list)
+
+index_d = vocab_list.index(account_d)
+
+account_list = [account_a, account_b, account_c, account_d]
+
+# print(index_a)
+# print(index_b)
+# print(index_c)
+# print(index_d)
+
+
+word = random.choice(account_list)
+
+index_word = vocab_list.index(word)
+#print(index_word)
+# print(account_a)
+# print(account_b)
+# print(account_c)
+# print(account_d)
+# print("")
+# print(word)
+
+if account_a == account_b or account_a == account_c or account_a == account_d:
+  account_b = random.choice(vocab_list)
+
+elif account_b == account_c or account_b == account_d:
+  account_b = random.choice(vocab_list)
+
+elif account_c == account_d:
+  account_c = random.choice(vocab_list)
+
+def get_random_account():
+  """get's random account from vocab_list"""
+  return random.choice(vocab_list)
+
+
+# make a funtion from this formating
+
+def format_vocab(account):
+  """formats data into printable string"""
+
+  account_word = account['word']
+
+  account_def = account['definition']
+
+  account_sent = account['sentence']
+
+  print(f"{account_word}, {account_def}, {account_sent}")
+
+  return (f"{account_word}, {account_def}, {account_sent}")
+
+
+#format_vocab(account_a)
+
+
+def get_word(account):
+  """get account word"""
+
+  account_word = account['word']
+  
+  #print (f"{account_word}")
+  
+  return  account_word  #(f"{account_word}")
+
+
+def get_def(account):
+  """gets account def"""
+
+  
+
+  account_def = account['definition']
+
+  print (f"{account_def}")
+
+  #return (f"{account_def}")
+
+def game():
+
+  print("")
+
+  get_word(word)
+  print("")
+
+  print("A)")
+  A = get_def(account_a)
+
+  print("")
+  print("B)")
+  B = get_def(account_b)
+
+  print("")
+  print("C)")
+  C = get_def(account_c)
+
+  print("")
+  print("D)")
+  D = get_def(account_d)
+
+  print("")
+
+  answer = input(f"What definition matches the word {get_word(word)}? ")
+
+  #compares list indexes of answer
+
+  if index_a == index_word and answer == "A":
+    print("correct")
+
+  elif index_b == index_word and answer == "B":
+    print("correct")
+
+  elif index_c == index_word and answer == "C":
+    print("correct")
+
+  elif index_d == index_word and answer == "D":
+    print("correct")
+
+  else:
+    print("sorry that's not it")
+    print(word)
+
+game()
+
+#find way to check for right answer
+#compare account to account to check for right answer
+# look at Angela method
+#access keys in dict
+#compare list Index 
